@@ -8,7 +8,7 @@ const About = () => {
 					<div className="about-photo">
 						<div className="owner-photo">
 							<div className="photo-placeholder">
-								<img src="/public/owner.png" alt="" />
+								<img src="/owner.png" alt="" />
 							</div>
 						</div>
 					</div>
