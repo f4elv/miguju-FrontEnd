@@ -1,6 +1,5 @@
-const API_BASE_URL = "http://localhost:3000";
+const API_BASE_URL = process.env.API_BASE_URL;
 
-// Função genérica para fazer requests
 const apiRequest = async (endpoint, options = {}) => {
 	try {
 		const url = `${API_BASE_URL}${endpoint}`;
@@ -27,20 +26,15 @@ const apiRequest = async (endpoint, options = {}) => {
 	}
 };
 
-// Serviços específicos com as rotas corretas
 export const amigurumiService = {
-	// Listar todos os amigurumis
 	list: (params = {}) => {
 		const queryParams = new URLSearchParams(params).toString();
 		return apiRequest(`/api/users/amigurumis?${queryParams}`);
 	},
-
-	// Buscar amigurumi por ID - CORRIGIDO
 	getById: (id) => {
 		return apiRequest(`/api/users/amigurumis/${id}`);
 	},
 
-	// Listar por categoria
 	listByCategory: (categoryId, params = {}) => {
 		const queryParams = new URLSearchParams(params).toString();
 		return apiRequest(`/api/users/category/${categoryId}/amigurumis?${queryParams}`);
@@ -48,7 +42,6 @@ export const amigurumiService = {
 };
 
 export const categoryService = {
-	// Listar todas as categorias
 	list: (params = {}) => {
 		const queryParams = new URLSearchParams(params).toString();
 		return apiRequest(`/api/users/categories?${queryParams}`);
