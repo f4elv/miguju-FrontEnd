@@ -16,9 +16,6 @@ const AmigurumiCard = ({ amigurumi }) => {
 			</div>
 			<div className="card-content">
 				<h3>{amigurumi.name}</h3>
-				<p className="card-description">
-					{amigurumi.description.length > 100 ? `${amigurumi.description.substring(0, 100)}...` : amigurumi.description}
-				</p>
 				<div className="card-categories">
 					{amigurumi.category?.map((cat) => (
 						<span key={cat.id} className="category-tag">
