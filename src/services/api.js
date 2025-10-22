@@ -29,21 +29,21 @@ const apiRequest = async (endpoint, options = {}) => {
 export const amigurumiService = {
 	list: (params = {}) => {
 		const queryParams = new URLSearchParams(params).toString();
-		return apiRequest(`/api/users/amigurumis?${queryParams}`);
+		return apiRequest(`/users/amigurumis?${queryParams}`);
 	},
 	getById: (id) => {
-		return apiRequest(`/api/users/amigurumis/${id}`);
+		return apiRequest(`/users/amigurumis/${id}`);
 	},
 
 	listByCategory: (categoryId, params = {}) => {
 		const queryParams = new URLSearchParams(params).toString();
-		return apiRequest(`/api/users/category/${categoryId}/amigurumis?${queryParams}`);
+		return apiRequest(`/users/category/${categoryId}/amigurumis?${queryParams}`);
 	},
 };
 
 export const categoryService = {
 	list: (params = {}) => {
 		const queryParams = new URLSearchParams(params).toString();
-		return apiRequest(`/api/users/categories?${queryParams}`);
+		return apiRequest(`/users/categories?${queryParams}`);
 	},
 };
