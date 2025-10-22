@@ -1,5 +1,7 @@
 const API_BASE_URL = process.env.REACT_APP_API_URL;
 
+console.log("API URL:", API_BASE_URL);
+
 const apiRequest = async (endpoint, options = {}) => {
 	try {
 		const url = `${API_BASE_URL}${endpoint}`;
